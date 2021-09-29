@@ -3,11 +3,13 @@
 npx create-react-app my-app
 npm start
 
+https://github.com/goitacademy/react-lint-staged-workshop
+
  Настройка pre-commit хуков 
-npm install --save-dev prettier eslint
+npm install --save-dev  
 
  Пользователям Windows 
-npx mrm @ 2 lint-staged
+npx mrm @ 2 lint-staged 
 
  Деплой приложения на Github Pages 
 npm run build
