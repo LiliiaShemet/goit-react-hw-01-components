@@ -1,12 +1,28 @@
 import PropTypes from "prop-types";
-import s from "./FriendList.module.css";
-
-function FriendList({ children }) {
-  return <ul className={s.friendList}>{children}</ul>;
+import classes from "./FriendList.module.css";
+import FriendListItem from '../FriendListItem/FriendListItem';
+function FriendList({ friends }) {
+  return (<ul className={classes.friend_list}>
+    {friends.map(friend => {
+      const { name, avatar, isOnline, id } = friend;
+      return (
+          <FriendListItem
+            key={friend.id}
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+            id={friend.id}
+          />
+      );
+    })}
+  </ul>);
 }
 
 FriendList.propTypes = {
-  children: PropTypes.node.isRequired
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ),
 };
-
 export default FriendList;

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
+import randomColor from '../helpers/randomColor'
 
 function Statistics({ title = 'Upload stats', stats }) {
   return (
@@ -11,7 +12,7 @@ function Statistics({ title = 'Upload stats', stats }) {
           <li
             key={stat.id}
             className={s.item}
-            style={{ backgroundColor: setRandomBgColor() }}
+            style={{ backgroundColor: randomColor }}
           >
             <span className="label">{stat.label}</span>
             <span className={s.percentage}>{stat.percentage}%</span>
@@ -33,10 +34,10 @@ Statistics.propTypes = {
   ),
 };
 
-function setRandomBgColor() {
+/*function setRandomBgColor() {
   return `rgb(${Math.round(Math.random() * (255 - 0) + 1)}, ${Math.round(
     Math.random() * (255 - 0) + 1,
   )}, ${Math.round(Math.random() * (255 - 0) + 1)})`;
-}
+}*/
 
 export default Statistics;

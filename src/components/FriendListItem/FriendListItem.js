@@ -5,7 +5,7 @@ function FriendListItem({ avatar, name, isOnline }) {
   const activeClass = isOnline ? s.active : s.offline;
 
   return (
-    <li className={s.item}>
+    <li className={s.item} >
       <span className={activeClass}></span>
       <img className={s.avatar} src={avatar} alt={name} width="48" />
       <p className={s.name}>{name}</p>

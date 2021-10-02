@@ -21,15 +21,7 @@ function App() {
       />
       <Statistics stats={statisticalData} />
       <FriendList>
-        {friends.map(friend => (
-          <FriendListItem
-            key={friend.id}
-            avatar={friend.avatar}
-            name={friend.name}
-            isOnline={friend.isOnline}
-            id={friend.id}
-          />
-        ))}
+        {friends}
       </FriendList>
       <TransactionHistory items={transactions} />
     </Container>
