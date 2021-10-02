@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
-import randomColor from '../helpers/randomColor'
+import randomColor from '../randomColor'
 
 function Statistics({ title = 'Upload stats', stats }) {
   return (
@@ -12,7 +12,7 @@ function Statistics({ title = 'Upload stats', stats }) {
           <li
             key={stat.id}
             className={s.item}
-            style={{ backgroundColor: randomColor }}
+            style={{ backgroundColor: randomColor() }}
           >
             <span className="label">{stat.label}</span>
             <span className={s.percentage}>{stat.percentage}%</span>
