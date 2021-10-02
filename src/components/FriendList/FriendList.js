@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import classes from "./FriendList.module.css";
 import FriendListItem from '../FriendListItem/FriendListItem';
-function FriendList({ friends }) {
+function FriendList({ children }) {
   return (<ul className={classes.friend_list}>
-    {friends.map(friend => {
+    {children.map(friend => {
       const { name, avatar, isOnline, id } = friend;
       return (
           <FriendListItem
@@ -19,7 +19,7 @@ function FriendList({ friends }) {
 }
 
 FriendList.propTypes = {
-  friends: PropTypes.arrayOf(
+  children: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
     }),
